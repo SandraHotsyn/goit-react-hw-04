@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import ImageCard from "../ImageCard/ImageCard";
+import css from "./ImageGallery.module.css";
 
 export default function ImageGallery({ images, onImageClick }) {
   if (images.length === 0) {
@@ -7,7 +8,7 @@ export default function ImageGallery({ images, onImageClick }) {
   }
 
   return (
-    <ul className="image-gallery">
+    <ul className={css.imageGallery}>
       {images.map((image) => (
         <li key={image.id} onClick={() => onImageClick(image)}>
           <ImageCard src={image.src} alt={image.alt} />

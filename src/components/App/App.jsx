@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "./App.css";
+import css from "./App.module.css";
 import SearchBar from "../SearchBar/SaerchBar";
 import ImageGallery from "../ImageGallery/ImageGallery";
 import Loader from "../Loader/Loader";
@@ -47,6 +47,7 @@ export default function App() {
         page === 1 ? fetchedImages : [...prevImages, ...fetchedImages]
       );
     } catch (err) {
+      console.error("Error fetching images:", err);
       setError("Не вдалося завантажити зображення. Спробуйте ще раз.");
     } finally {
       setIsLoading(false);
@@ -76,7 +77,7 @@ export default function App() {
   };
 
   return (
-    <div>
+    <div className={css.App}>
       <SearchBar onSubmit={handleSearch} />
       {error ? (
         <ErrorMessage message={error} />

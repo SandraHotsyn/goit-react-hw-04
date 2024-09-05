@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Modal from "react-modal";
+import css from "./ImageModal.module.css";
 
 Modal.setAppElement("#root");
 
@@ -9,11 +10,11 @@ export default function ImageModal({ isOpen, onClose, imageSrc, imageAlt }) {
       isOpen={isOpen}
       onRequestClose={onClose}
       contentLabel="Image Modal"
-      className="modal"
-      overlayClassName="overlay"
+      className={css.modal}
+      overlayClassName={css.overlay}
     >
-      <div className="modal-content">
-        <button className="close-button" onClick={onClose}>
+      <div className={css.modalContent}>
+        <button className={css.closeButton} onClick={onClose}>
           ×
         </button>
         <img src={imageSrc} alt={imageAlt} />

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import css from "./SearchBar.module.css";
 
 export default function SearchBar({ onSubmit }) {
   const [query, setQuery] = useState("");
@@ -18,11 +19,12 @@ export default function SearchBar({ onSubmit }) {
     }
 
     onSubmit(query);
-    setQuery(""); 
+    setQuery("");
+  };
 
   return (
     <header>
-      <form onSubmit={handleSubmit}>
+      <form className={css.searchBar} onSubmit={handleSubmit}>
         <input
           type="text"
           value={query}
