@@ -1,5 +1,5 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
+import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 export default function SearchBar({ onSubmit }) {
@@ -18,8 +18,7 @@ export default function SearchBar({ onSubmit }) {
     }
 
     onSubmit(query);
-    setQuery("");
-  };
+    setQuery(""); 
 
   return (
     <header>
@@ -39,7 +38,6 @@ export default function SearchBar({ onSubmit }) {
   );
 }
 
-// Валідація пропсів
 SearchBar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
